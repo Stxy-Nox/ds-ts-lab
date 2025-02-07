@@ -15,8 +15,19 @@ function allOlder(f:Friend[]) : string[] {
   })
 }
 
-
 console.log(allOlder(friends))
+
+function findFriends( 
+  friends: Friend[], 
+  finder: (f: Friend) => boolean
+): string[] {
+  const result = friends.filter(finder).map(f => f.name);
+  return result;
+}
+
+console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
+console.log(findFriends(friends, (friend) => friend.age < 35));
+
 
 function highestExtension(cs: Colleague[]) { // Inferred retun type
   const result = cs.sort(
@@ -62,13 +73,12 @@ console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name
 console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length))); // NEW
 
 
-function findFriends( 
-  friends: Friend[], 
-  finder: (f: Friend) => boolean
-): string[] {
-  const result = friends.filter(finder).map(f => f.name);
-  return result;
+function addInterest(f: Friend, i: string): string[] {
+  if (f.interests == undefined) {
+    f.interests = [];
+  }
+  f.interests.push(i);
+  return f.interests;
 }
 
-console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
-console.log(findFriends(friends, (friend) => friend.age < 35));
+console.log(addInterest(friends[0], 'Politics'))
