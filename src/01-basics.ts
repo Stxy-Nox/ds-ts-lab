@@ -1,8 +1,5 @@
 import {Friend, Colleague, ColleagueHistory } from './myTypes'
 
-
-
-
 const friend1 = {
   name: "caixian wang",
   phone: "087-12345",
@@ -15,7 +12,7 @@ const friend2 = {
   age: 31,
 };
 
-
+export const friends = [friend1, friend2];
 
 
 //   -------------------
@@ -45,10 +42,6 @@ const colleague3 = {
     extension: 125,
   },
 };
-
-export const friends = [friend1, friend2];
-
-
 
 export const colleagues : ColleagueHistory = {
   current: [colleague1, colleague2, colleague3],
