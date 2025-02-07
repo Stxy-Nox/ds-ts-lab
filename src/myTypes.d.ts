@@ -1,9 +1,4 @@
 
-export interface Friend {
-  name: string;
-  phone: string;
-  age: number
-}
 
 export interface Colleague {
   name: string;
@@ -22,4 +17,12 @@ former: Colleague[]
 export interface EmailContact {
   name: string;
   email: string
+}
+
+export interface Friend {
+  name: string;
+  phone: string;
+  dob? : Date;   // New
+  age: number;
+  interests? : string[]   // New
 }
